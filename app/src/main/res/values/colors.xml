@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Màu nền highlight item được chọn theo đề bài HW03.pdf -->
+    <color name="item_selected">#FFE08A</color>
+    <color name="divider">#BDBDBD</color>
+
+    <!-- Màu văn bản và nút phân trang -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#616161</color>
+    <color name="btn_page_stroke">#9E9E9E</color>
 </resources>
