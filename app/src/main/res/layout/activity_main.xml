@@ -5,15 +5,129 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
+    <!-- TextView hiển thị tên item đã chọn ở trên cùng -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvSelected"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="16dp"
+        android:text="@string/you_choose_none"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="You choose: Phan Văn C" />
+
+    <!-- Đường kẻ phân cách dưới Header -->
+    <View
+        android:id="@+id/viewHeaderDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSelected" />
+
+    <!-- ListView hiển thị danh sách 5 liên hệ trên mỗi trang -->
+    <ListView
+        android:id="@+id/lvContacts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/viewFooterDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewHeaderDivider"
+        tools:listitem="@layout/item_contact" />
+
+    <!-- Đường kẻ phân cách trước khu vực nút phân trang -->
+    <View
+        android:id="@+id/viewFooterDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toTopOf="@id/layoutPagination"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Hàng 3 nút phân trang góc dưới bên phải -->
+    <LinearLayout
+        android:id="@+id/layoutPagination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnPage1"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginEnd="6dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="@string/page_1"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="4dp"
+            app:strokeColor="@color/btn_page_stroke" />
+
+        <Button
+            android:id="@+id/btnPage2"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginEnd="6dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="@string/page_2"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="4dp"
+            app:strokeColor="@color/btn_page_stroke" />
+
+        <Button
+            android:id="@+id/btnPage3"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="@string/page_3"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="4dp"
+            app:strokeColor="@color/btn_page_stroke" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
