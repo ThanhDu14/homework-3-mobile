@@ -2,10 +2,10 @@
 package com.example.homework_3.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,6 +26,9 @@ public class ContactAdapter extends BaseAdapter {
     @Nullable
     private Contact selectedContact;
 
+    /** Chiều cao mỗi item (px); 0 = giữ wrap_content của item_contact.xml. */
+    private int itemHeight = 0;
+
     public ContactAdapter(Context context, List<Contact> items) {
         this.inflater = LayoutInflater.from(context);
         this.items = new ArrayList<>(items);
@@ -38,6 +41,14 @@ public class ContactAdapter extends BaseAdapter {
 
     public void setSelectedContact(@Nullable Contact c) {
         this.selectedContact = c;
+        notifyDataSetChanged();
+    }
+
+    public void setItemHeight(int itemHeight) {
+        if (this.itemHeight == itemHeight) {
+            return;
+        }
+        this.itemHeight = itemHeight;
         notifyDataSetChanged();
     }
 
@@ -87,6 +98,17 @@ public class ContactAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
+        if (itemHeight > 0) {
+            ViewGroup.LayoutParams lp = convertView.getLayoutParams();
+            if (lp == null) {
+                lp = new AbsListView.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT, itemHeight);
+            } else {
+                lp.height = itemHeight;
+            }
+            convertView.setLayoutParams(lp);
+        }
+
         Contact contact = getItem(position);
 
         holder.imgAvatar.setImageResource(
@@ -101,7 +123,9 @@ public class ContactAdapter extends BaseAdapter {
                     R.drawable.bg_item_selected
             );
         } else {
-            convertView.setBackgroundColor(Color.TRANSPARENT);
+            convertView.setBackgroundResource(
+                    R.drawable.bg_item_normal
+            );
         }
 
         return convertView;

@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/** Nguồn dữ liệu cố định gồm 15 liên hệ (3 trang × 5 dòng). */
 public final class ContactRepository {
 
     private static final List<Contact> CONTACTS = Collections.unmodifiableList(Arrays.asList(
@@ -31,7 +30,6 @@ public final class ContactRepository {
     private ContactRepository() {
     }
 
-    /** Trả về đúng 15 liên hệ, thứ tự cố định, danh sách không sửa được. */
     public static List<Contact> getContacts() {
         return CONTACTS;
     }
