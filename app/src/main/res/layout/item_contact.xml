@@ -11,7 +11,6 @@
     android:paddingEnd="26dp"
     android:paddingBottom="8dp">
 
-    <!-- Avatar liên hệ (bên trái, kích thước 56dp) -->
     <ImageView
         android:id="@+id/imgAvatar"
         android:layout_width="56dp"
@@ -20,7 +19,6 @@
         android:contentDescription="@null"
         tools:src="@drawable/avatar_01" />
 
-    <!-- Họ tên và Số điện thoại (xếp dọc bên phải) -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"

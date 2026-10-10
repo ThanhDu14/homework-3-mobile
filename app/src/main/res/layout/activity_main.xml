@@ -8,7 +8,6 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <!-- TextView hiển thị tên item đã chọn ở trên cùng -->
     <TextView
         android:id="@+id/tvSelected"
         android:layout_width="0dp"
@@ -23,7 +22,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="You choose: Phan Văn C" />
 
-    <!-- Đường kẻ phân cách dưới Header -->
     <View
         android:id="@+id/viewHeaderDivider"
         android:layout_width="0dp"
@@ -33,7 +31,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvSelected" />
 
-    <!-- ListView hiển thị danh sách 5 liên hệ trên mỗi trang -->
     <ListView
         android:id="@+id/lvContacts"
         android:layout_width="0dp"
@@ -50,7 +47,6 @@
         app:layout_constraintTop_toBottomOf="@id/viewHeaderDivider"
         tools:listitem="@layout/item_contact" />
 
-    <!-- Đường kẻ phân cách trước khu vực nút phân trang -->
     <View
         android:id="@+id/viewFooterDivider"
         android:layout_width="0dp"
@@ -60,7 +56,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Hàng 3 nút phân trang góc dưới bên phải -->
     <LinearLayout
         android:id="@+id/layoutPagination"
         android:layout_width="wrap_content"
